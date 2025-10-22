@@ -3,3 +3,8 @@ controllers:
         path: ../src/Controller/
         namespace: App\Controller
     type: attribute
+
+calcul:
+    path: '/calcul/{number}'
+    controller: App\Controller\MainController::indexter
+
