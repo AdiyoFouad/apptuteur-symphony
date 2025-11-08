@@ -1,0 +1,17 @@
+{# templates/tuteurs.html.twig #}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Listes des tuteurs</title>
+</head>
+<body>
+    {% for tuteur in tuteurs %}
+        {{ tuteur.nom }} {{ tuteur.prenom }}<br>
+    {% else %}
+        Aucun tuteur trouvé.
+    {% endfor %}
+
+</body>
+</html>

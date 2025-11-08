@@ -8,3 +8,13 @@ calcul:
     path: '/calcul/{number}'
     controller: App\Controller\MainController::indexter
 
+hello :
+    path: 'hello/{prenom}'
+    controller : App\Controller\FormController::hello
+    defaults:
+        prenom : "Bryan"
+
+tuteurs :
+    path: '/tuteurs'
+    controller : App\Controller\FormController::listes
+    
