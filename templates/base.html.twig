@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
@@ -7,10 +7,23 @@
         {% block stylesheets %}
         {% endblock %}
 
+        <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+
         {% block javascripts %}
         {% endblock %}
     </head>
     <body>
+        <nav>
+            <div class="logo">
+                <img src="{{ asset('img/logo.png')}}" />
+            </div>
+
+            <div class="links">
+                <a href="{{ path('tuteurs') }}">Tuteurs</a>
+                <a href="#">Étudiants</a>
+                <a href="#">Sujets</a>
+            </div>
+        </nav>
         {% block body %}{% endblock %}
     </body>
 </html>

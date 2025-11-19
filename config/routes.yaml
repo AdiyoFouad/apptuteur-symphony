@@ -4,6 +4,10 @@ controllers:
         namespace: App\Controller
     type: attribute
 
+index:
+    path: '/'
+    controller: App\Controller\MainController::index
+
 calcul:
     path: '/calcul/{number}'
     controller: App\Controller\MainController::indexter
@@ -16,7 +20,8 @@ hello :
 
 tuteurs :
     path: '/tuteurs'
-    controller : App\Controller\FormController::listes
+    #controller : App\Controller\FormController::listes
+    controller : App\Controller\TuteurController::index
 
 search_tuteur :
     path: '/search'

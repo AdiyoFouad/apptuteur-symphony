@@ -1,0 +1,41 @@
+nav {
+    background: #f5f5f5;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+nav .links a {
+    margin-left: 15px;
+    text-decoration: none;
+    color: #333;
+}
+nav .logo img{
+    font-weight: bold;
+    font-size: 1.2em;
+    height: 25px;
+}
+
+.tutor-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.tutor-table th {
+    background: #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.tutor-table td {
+    padding: 8px;
+}
+
+.tutor-table tr:nth-child(even) {
+    background: #f5f5f5;
+}
+
+.tutor-table tr:hover {
+    background: #e8f0ff;
+}

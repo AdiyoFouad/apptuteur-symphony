@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1>Liste des tuteurs</h1>
+
+<table class="tutor-table">
+    <thead>
+    <tr>
+        <th>{{ 'Nom'|upper }}</th>
+        <th>{{ 'Prénom'|upper }}</th>
+        <th>{{ 'Entreprise'|upper }}</th>
+        <th>{{ 'Email'|upper }}</th>
+        <th>{{ 'Téléphone'|upper }}</th>
+        <th>{{ '# Étudiants'|upper }}</th>
+        <th>{{ 'Actions'|upper }}</th>
+        <th>
+            {# Lien de tri sur le nom #}
+            {% set newDir = (dir == 'asc') ? 'desc' : 'asc' %}
+            <a href="?{{ query|merge({'sort':'nom', 'dir':newDir})|url_encode }}">
+                Trier par nom ({{ newDir }})
+            </a>
+        </th>
+    </tr>
+    </thead>
+
+    <tbody>
+    {% for t in tuteurs %}
+        <tr>
+            <td>{{ t.nom|default('—') }}</td>
+            <td>{{ t.prenom|default('—') }}</td>
+            <td>{{ t.entreprise|default('—') }}</td>
+            <td>{{ t.email|default('—') }}</td>
+            <td>{{ t.telephone|default('—') }}</td>
+            <td>{{ t.etudiants|length }}</td>
+            <td> 
+                <a href="#">Voir</a>
+            </td>
+            <td></td>
+        </tr>
+    {% else %}
+        <tr>
+            <td colspan="8" style="text-align: center; font-style: italic;">
+                Aucun tuteur
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

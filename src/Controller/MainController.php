@@ -3,18 +3,31 @@ namespace App\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+
 
 use Symfony\Component\HttpFoundation\Request;
+use Twig\Environment;
 
 
 
-class MainController {
-    #[Route('/index')]
+class MainController extends AbstractController {
+
+    public function index(Environment $twig) {
+        $html = $twig->render('home.html.twig');
+        return new Response($html);
+
+    }
+
+
+
+    /* ---------------------------------------------------------------- */
+    /* #[Route('/index')]
     public function index(): Response {
         return new Response(
             '<html><body>Votre première page</body></html>'
         );
-    }
+    } */
     /* ---------------------------------------------------------------- */
     
     #[Route(

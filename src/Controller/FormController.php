@@ -11,6 +11,12 @@ class FormController extends AbstractController {
         $html=$twig->render('hello.html.twig', ['prenom' => $prenom] );
         return new Response ($html);
     }
+/* 
+    public function index(Environment $twig) {
+        $html = $twig->render('home.html.twig');
+        return new Response($html);
+
+    } */
 
     public function listes(Environment $twig) {
         $tuteurs = [
