@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Résultat recherche{% endblock %}
+
+{% block body %}
+<h1>Résultat de la recherche</h1>
+
+{% if existe %}
+    <p style="color: green;">Le tuteur <strong>{{ nom }}</strong> existe !</p>
+{% else %}
+    <p style="color: red;">Le tuteur <strong>{{ nom }}</strong> n’existe pas.</p>
+{% endif %}
+
+<a href="{{ path('search_tuteur') }}"> <== Faire une nouvelle recherche</a>
+{% endblock %}

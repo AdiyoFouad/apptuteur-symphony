@@ -17,4 +17,12 @@ hello :
 tuteurs :
     path: '/tuteurs'
     controller : App\Controller\FormController::listes
-    
+
+search_tuteur :
+    path: '/search'
+    controller: App\Controller\FormController::search
+
+verify_tuteur :
+    path: '/verify_tuteur'
+    controller: App\Controller\FormController::verify
+    methods : ['POST']

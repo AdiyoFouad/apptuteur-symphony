@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Rechercher un tuteur{% endblock %}
+
+{% block body %}
+<h1>Rechercher un tuteur</h1>
+
+<form action="{{ path('verify_tuteur') }}" method="POST">
+    <label for="nom">Nom du tuteur :</label>
+    <input type="text" id="nom" name="nom" required>
+
+    <button type="submit">Rechercher</button>
+</form>
+{% endblock %}
