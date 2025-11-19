@@ -1,12 +1,11 @@
 {# templates/hello.html.twig #}
 
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>Hello Page</title>
-</head>
-<body>
-    <h1>{{prenom | upper}}</h1>
-</body>
-</html>
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Hello page
+{% endblock %}
+
+{% block body %}
+    <h1>{{ prenom | upper }}</h1>
+{% endblock %}
