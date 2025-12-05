@@ -47,6 +47,10 @@ class TuteurController extends AbstractController {
             'query' => $request->query->all() // utile pour conserver les paramètres
         ]));
     }
+
+    public function details(Environment $twig, int $id) {
+
+    }
 }
 
 ?>
