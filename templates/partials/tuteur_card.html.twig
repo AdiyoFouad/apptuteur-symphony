@@ -1,0 +1,16 @@
+<div class="card mb-4 shadow-sm">
+    <div class="card-body">
+        <h4 class="card-title">
+            {{ tuteur.prenom }} {{ tuteur.nom }}
+        </h4>
+
+        <p class="card-text">
+            <strong>Entreprise :</strong> {{ tuteur.entreprise }} <br>
+            <strong>Email :</strong> <a href="mailto:{{ tuteur.email }}">{{ tuteur.email }}</a><br>
+            <strong>Téléphone :</strong> {{ tuteur.telephone }}
+        </p>
+
+        {# Bloc surchargeable avec embed #}
+        {% block actions %}{% endblock %}
+    </div>
+</div>

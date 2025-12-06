@@ -18,7 +18,7 @@ class TuteurController extends AbstractController {
             'email' => 'paul.johnson@acme.com',
             'telephone' => '06 00 00 00 01',
             'etudiants' => [
-                ['nom' => 'Martin', 'prenom' => 'Léa', 'sujet' => 'Détection d’anomalies sur flux bancaires'],
+                ['nom' => 'Martin', 'prenom' => 'Léa', 'sujet' => 'Détection d\'anomalies sur flux bancaires'],
                 ['nom' => 'Durand', 'prenom' => 'Noah', 'sujet' => 'Dashboard risques crédit']
             ]
         ],
@@ -49,8 +49,23 @@ class TuteurController extends AbstractController {
     }
 
     public function details(Environment $twig, int $id) {
-
+        $tuteur = $this->findTuteurById($id);
+        return new Response($twig->render('tuteur/show.html.twig', [
+            'tuteur' => $tuteur
+        ]));
     }
+
+    private function findTuteurById(int $id): ?array
+    {
+        foreach (TuteurController::$tuteurs as $tuteur) {
+            if ($tuteur['id'] === $id) {
+                return $tuteur;
+            }
+        }
+
+        return null;
+    }
+
 }
 
 ?>

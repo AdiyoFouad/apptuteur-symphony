@@ -1,3 +1,33 @@
 {% extends 'base.html.twig' %}
 
 {% block title %} Détails Tuteur - {{ tuteur.nom }} {% endblock %}
+
+{% block body %}
+
+<h2 class="mb-4">Détails Tuteur - {{ tuteur.nom }}</h2>
+
+{# On utilise embed pour pouvoir surcharger un bloc #}
+{% embed 'partials/tuteur_card.html.twig' with {'tuteur': tuteur} %}
+    {% block actions %}
+        <a href="mailto:{{ tuteur.email }}" class="btn btn-primary">
+            Contacter
+        </a>
+    {% endblock %}
+{% endembed %}
+
+<h3>Étudiants encadrés</h3>
+
+<ul class="list-group">
+    {% for etu in tuteur.etudiants %}
+        <li class="list-group-item">
+            <strong>{{ etu.prenom }} {{ etu.nom }}</strong> - 
+            <span class="badge bg-info text-dark">{{ etu.sujet }}</span>
+        </li>
+    {% else %}
+        <li class="list-group-item text-muted">
+            Aucun étudiant pour ce tuteur.
+        </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

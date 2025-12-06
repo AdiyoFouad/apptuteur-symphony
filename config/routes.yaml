@@ -23,6 +23,10 @@ tuteurs :
     #controller : App\Controller\FormController::listes
     controller : App\Controller\TuteurController::index
 
+show_tuteur:
+    path: '/tuteurs/{id}'
+    controller: App\Controller\TuteurController::details
+
 search_tuteur :
     path: '/search'
     controller: App\Controller\FormController::search

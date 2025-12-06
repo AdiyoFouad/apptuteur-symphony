@@ -33,7 +33,7 @@
             <td>{{ t.telephone|default('—') }}</td>
             <td>{{ t.etudiants|length }}</td>
             <td> 
-                <a href="#">Voir</a>
+                <a href="{{ path('show_tuteur', {'id': t.id}) }}">Voir</a>
             </td>
             <td></td>
         </tr>
