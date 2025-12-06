@@ -39,3 +39,11 @@ nav .logo img{
 .tutor-table tr:hover {
     background: #e8f0ff;
 }
+
+.badge-sujet {
+    background-color: #17a2b8;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: .85rem;
+}

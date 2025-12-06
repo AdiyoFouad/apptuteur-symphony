@@ -32,6 +32,10 @@ class TuteurController extends AbstractController {
             'etudiants' => []
         ]
     ];
+
+    public static function getAllTuteurs(){
+        return TuteurController::$tuteurs;
+    }
     public function index(Environment $twig, Request $request) {
         $sort = $request->query->get('sort', 'nom');
         $dir  = $request->query->get('dir', 'asc');
